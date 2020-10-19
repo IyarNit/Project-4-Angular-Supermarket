@@ -1,0 +1,23 @@
+<table>
+    <tr>
+        Dear <%= user.data.name%> has placed an order on <%=orderCreationDate%> to be delivered on <%=deliveryDate%>
+        at the following address: <%=address.street%> <%=address.city%>.
+        <br />
+        Order Contents:
+    </tr>
+    <% for(var i=0; i < cart.length; i++) { %>
+    <tr>
+        <td>Product: <%= cart[i].productName %></td>
+        <td>Quantity: <%= cart[i].quantity %></td>
+        <td>Price: <%= cart[i].totalpriceperitem %>₪</td>
+
+    </tr>
+    <% } %>
+    <tr>
+        <hr />
+        <% for(var i=0; i < cart.length; i++) { %>
+        <td>Total Price: <%= cart[0].totalprice %>₪</td>
+        <% } %>
+
+    </tr>
+</table>
